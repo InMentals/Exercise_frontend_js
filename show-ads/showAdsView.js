@@ -8,3 +8,8 @@ export const buildAd = (ad) => {
       `;
   return adView;
 }
+
+
+export const buildNoAdsAdvice = () => {
+  return '<h3>We are sorry, there are no ads available!</h3>'
+}
