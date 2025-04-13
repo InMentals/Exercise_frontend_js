@@ -15,3 +15,8 @@ export const buildProduct = (product) => {
     return productView;
     
 }
+
+
+export const buildNoProductsAdvice = () => {
+  return '<h3>We are sorry, there are no products available!</h3>'
+}
