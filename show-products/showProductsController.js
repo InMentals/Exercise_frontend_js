@@ -1,18 +1,22 @@
 import { getProducts } from "./showProductsModel.js";
 import { buildProduct, buildNoProductsAdvice } from "./showProductsView.js";
 
-export async function showProductsController() {
+export async function showProductsController(container) {
   
   try {
+    const event = new CustomEvent("load-products-started")
+    container.dispatchEvent(event)
     const products = await getProducts();
-    drawProducts(products);
+    drawProducts(products, container);
   } catch (error) {
     alert(error.message);
+  }finally{
+    const event = new CustomEvent("load-products-finished")
+    container.dispatchEvent(event)
   }
 }
 
-function drawProducts(products){
-  const container = document.querySelector(".products-container");
+function drawProducts(products, container){
   container.innerHTML = ""; 
   if(products.length === 0) {
     container.innerHTML = buildNoProductsAdvice();

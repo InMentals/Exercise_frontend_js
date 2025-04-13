@@ -23,6 +23,6 @@
   }
   @keyframes l3 {to{transform: rotate(1turn)}}
 
-  .loader.hidden {
+  .loader-container.hidden {
     display: none;
   }
