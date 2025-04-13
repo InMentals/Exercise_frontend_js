@@ -1,0 +1,58 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.product {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 15px;
+  transition: transform 0.2s ease;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product:hover {
+  transform: scale(1.02);
+}
+
+.product h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.product p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.product p:first-of-type {
+  font-weight: bold;
+  color: #28a745; /* verde por defecto para "Sell" */
+}
+
+.product p.buy:first-of-type {
+  color: #dc3545; /* rojo para "Buy" */
+}
+
+.product img {
+  width: 200px;      /* Tamaño fijo como antes */
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+  align-self: center; /* Centrar imagen en la tarjeta */
+}
+
