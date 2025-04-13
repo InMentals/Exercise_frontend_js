@@ -2,21 +2,26 @@ import { getProducts } from "./showProductsModel.js";
 import { buildProduct, buildNoProductsAdvice } from "./showProductsView.js";
 
 export async function showProductsController() {
-    const container = document.querySelector(".products-container");
+  
+  try {
     const products = await getProducts();
-    if (products.length > 0) {
-      drawProducts(products, container);
-    }else {
-      container.innerHTML = buildNoProductsAdvice();
-    }
+    drawProducts(products);
+  } catch (error) {
+    alert(error.message);
+  }
 }
 
-function drawProducts(products, container){
+function drawProducts(products){
+  const container = document.querySelector(".products-container");
   container.innerHTML = ""; 
-  products.forEach((product) => {
-    const productContainer = document.createElement("div");
-    productContainer.classList.add("product");
-    productContainer.innerHTML = buildProduct(product);
-    container.appendChild(productContainer);
-  });
+  if(products.length === 0) {
+    container.innerHTML = buildNoProductsAdvice();
+  } else {
+    products.forEach((product) => {
+      const productContainer = document.createElement("div");
+      productContainer.classList.add("product");
+      productContainer.innerHTML = buildProduct(product);
+      container.appendChild(productContainer);
+    });
+  }
 }
