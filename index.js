@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hide();
         showNotification('Products loaded successfully');
     })
-    productsContainer.addEventListener('load-tweets-error', (event) => {
+    productsContainer.addEventListener('load-products-error', (event) => {
         const errorMesage = event.detail;
         showNotification(errorMesage);
     })

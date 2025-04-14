@@ -13,7 +13,7 @@ export function notificationsController(notificationsContainer){
             notificationsContainer.removeChild(newNotification);
         });
         setTimeout(() => {
-            removeNotification(newNotification)}, 5000)
+            removeNotification(newNotification)}, 5000);
          }
     return {showNotification}
 }
