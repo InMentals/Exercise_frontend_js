@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const {show, hide} = loaderController(loaderContainer);
     const {showNotification} = notificationsController(notificationsContainer);
 
+
+
     productsContainer.addEventListener('load-products-started', () => {
         show();
     })
@@ -17,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         hide();
         showNotification('Products loaded successfully');
     })
-
+    productsContainer.addEventListener('load-tweets-error', (event) => {
+        const errorMesage = event.detail;
+        showNotification(errorMesage);
+    })
     showProductsController(productsContainer);
 
 })

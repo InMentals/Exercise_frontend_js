@@ -4,15 +4,18 @@ import { buildProduct, buildNoProductsAdvice } from "./showProductsView.js";
 export async function showProductsController(container) {
   
   try {
-    const event = new CustomEvent("load-products-started")
-    container.dispatchEvent(event)
+    const event = new CustomEvent("load-products-started");
+    container.dispatchEvent(event);
     const products = await getProducts();
     drawProducts(products, container);
   } catch (error) {
-    alert(error.message);
-  }finally{
-    const event = new CustomEvent("load-products-finished")
-    container.dispatchEvent(event)
+    const event = new CustomEvent("load-tweets-error", {
+      detail: error.message
+    });
+    container.dispatchEvent(event);
+  } finally {
+    const event = new CustomEvent("load-products-finished");
+    container.dispatchEvent(event);
   }
 }
 
