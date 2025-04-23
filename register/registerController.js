@@ -1,8 +1,10 @@
+import { registerUser } from "./registerModel.js";
+
 export async function registerController(form) {
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            const usserName = form.querySelector("#userName").value;
+            const userName = form.querySelector("#userName").value;
             const password = form.querySelector("#password").value;
             const email = form.querySelector("#email").value;
             const confirmPassword = form.querySelector("#confirmPassword").value;
@@ -21,7 +23,7 @@ export async function registerController(form) {
             }
 
             if (errors.length === 0) {
-                //create user
+                handleRegisterUser(userName, email, password, form);
             }else{
                 errors.forEach((error) => {
                     const event = new CustomEvent("register-error", {
@@ -31,5 +33,19 @@ export async function registerController(form) {
                 });
             }
         });
+
+        const handleRegisterUser = async (userName, email, password, form) => {
+            try{
+                await registerUser(userName, email, password);
+                setTimeout(() => {
+                    window.location = '/'
+                  }, 5000);
+            }catch(error){
+                const event = new CustomEvent("register-error", {
+                    detail: error,
+                });
+                form.dispatchEvent(event);
+            }
+        }
 }
 
