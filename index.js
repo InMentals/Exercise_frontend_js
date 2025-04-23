@@ -1,6 +1,6 @@
 import { showProductsController } from "./show-products/showProductsController.js";
 import { loaderController } from "./loader/loaderController.js";
-import { notificationsController } from "./notifiations/notificationsController.js";    
+import { notificationsController } from "./notifications/notificationsController.js";    
 
 document.addEventListener("DOMContentLoaded", () => {
 
