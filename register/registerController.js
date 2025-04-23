@@ -2,10 +2,10 @@ export async function registerController(form) {
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            const name = form.querySelector("#name").value;
+            const usserName = form.querySelector("#userName").value;
             const password = form.querySelector("#password").value;
             const email = form.querySelector("#email").value;
-            const confirmPassword = form.querySelector("#confirm-password").value;
+            const confirmPassword = form.querySelector("#confirmPassword").value;
             const errors = [];
             
 
@@ -22,8 +22,14 @@ export async function registerController(form) {
 
             if (errors.length === 0) {
                 //create user
+            }else{
+                errors.forEach((error) => {
+                    const event = new CustomEvent("register-error", {
+                        detail: error,
+                    });
+                    form.dispatchEvent(event);
+                });
             }
-
         });
 }
 
