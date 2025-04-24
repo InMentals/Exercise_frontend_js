@@ -11,8 +11,8 @@ export async function registerController(form) {
             
 
             //validate email format
-            const userRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-            if (!userRegex.test(user)) {
+            const userRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+            if (!userRegExp.test(user)) {
                 errors.push("User format is not valid. Must be an email address.");
             }
 
