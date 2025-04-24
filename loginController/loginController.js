@@ -33,7 +33,7 @@ export async function loginController(form) {
               }, 5000);
         }catch(error){
             const event = new CustomEvent("login-error", {
-                detail: error,
+                detail: error.message,
             });
             form.dispatchEvent(event);
         }
