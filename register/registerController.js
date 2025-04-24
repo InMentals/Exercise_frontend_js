@@ -41,7 +41,7 @@ export async function registerController(form) {
                 await registerUser(user, password);
                 setTimeout(() => {
                     window.location = '/'
-                  }, 5000);
+                  }, 3000);
             }catch(error){
                 const event = new CustomEvent("registration-error", {
                     detail: error,

@@ -30,7 +30,7 @@ export async function loginController(form) {
             localStorage.setItem("token", token)
             setTimeout(() => {
                 window.location = '/'
-              }, 5000);
+              }, 3000);
         }catch(error){
             const event = new CustomEvent("login-error", {
                 detail: error.message,
