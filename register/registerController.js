@@ -1,4 +1,5 @@
 import { registerUser } from "./registerModel.js";
+import { REGEXP } from "../utils/constants.js";
 
 export async function registerController(form) {
 
@@ -11,8 +12,8 @@ export async function registerController(form) {
             
 
             //validate email format
-            const userRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-            if (!userRegex.test(user)) {
+            const userRegExp = REGEXP.mail;
+            if (!userRegExp.test(user)) {
                 errors.push("User format is not valid. Must be an email address.");
             }
 
@@ -40,7 +41,7 @@ export async function registerController(form) {
                 await registerUser(user, password);
                 setTimeout(() => {
                     window.location = '/'
-                  }, 5000);
+                  }, 3000);
             }catch(error){
                 const event = new CustomEvent("registration-error", {
                     detail: error,
