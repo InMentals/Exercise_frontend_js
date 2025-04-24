@@ -14,19 +14,30 @@ export async function loginController(form) {
         if (!userRegExp.test(user)) {
             alert('User format is not valid. Must be an email address.')
         } else {
-            handleLogin(user, password)
+            handleLogin(user, password, form)
         }
 
-        async function handleLogin(user, password) {
-            const token = await login(user, password);
+
+
+
+    });
+
+    const handleLogin = async (user, password, form) => {
+        try{
+            const event = new CustomEvent("login-started");
+            form.dispatchEvent(event);
+            const token =await login(user, password);
             localStorage.setItem("token", token)
             setTimeout(() => {
                 window.location = '/'
               }, 5000);
+        }catch(error){
+            const event = new CustomEvent("login-error", {
+                detail: error,
+            });
+            form.dispatchEvent(event);
         }
-
-    });
-
+    }
 
 
 
