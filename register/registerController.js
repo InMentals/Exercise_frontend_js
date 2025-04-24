@@ -4,29 +4,28 @@ export async function registerController(form) {
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            const userName = form.querySelector("#userName").value;
+            const user = form.querySelector("#user").value;
             const password = form.querySelector("#password").value;
-            const email = form.querySelector("#email").value;
             const confirmPassword = form.querySelector("#confirmPassword").value;
             const errors = [];
             
 
             //validate email format
-            const emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-            if (!emailRegex.test(email)) {
-                errors.push("Email format is not valid");
+            const userRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+            if (!userRegex.test(user)) {
+                errors.push("User format is not valid. Must be an email address.");
             }
 
             //check if password and confirm password are the same
             if (password !== confirmPassword) {
-                errors.push("Password and confirm password are not the same");
+                errors.push("Password and confirm password are not the same.");
             }
 
             if (errors.length === 0) {
-                handleRegisterUser(userName, email, password, form);
+                handleRegisterUser(user, password, form);
             }else{
                 errors.forEach((error) => {
-                    const event = new CustomEvent("register-error", {
+                    const event = new CustomEvent("registration-error", {
                         detail: error,
                     });
                     form.dispatchEvent(event);
@@ -34,14 +33,16 @@ export async function registerController(form) {
             }
         });
 
-        const handleRegisterUser = async (userName, email, password, form) => {
+        const handleRegisterUser = async (user, password, form) => {
             try{
-                await registerUser(userName, email, password);
+                const event = new CustomEvent("registration-started");
+                form.dispatchEvent(event);
+                await registerUser(user, password);
                 setTimeout(() => {
                     window.location = '/'
                   }, 5000);
             }catch(error){
-                const event = new CustomEvent("register-error", {
+                const event = new CustomEvent("registration-error", {
                     detail: error,
                 });
                 form.dispatchEvent(event);
