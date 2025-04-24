@@ -12,13 +12,13 @@ export async function loginController(form) {
         //validate email format
         const userRegExp = REGEXP.mail;
         if (!userRegExp.test(user)) {
-            alert('User format is not valid. Must be an email address.')
+            const event = new CustomEvent("login-error", {
+                detail: "User format is not valid. Must be an email address.",
+            });
+            form.dispatchEvent(event);
         } else {
             handleLogin(user, password, form)
         }
-
-
-
 
     });
 

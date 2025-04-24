@@ -7,7 +7,7 @@ export const login = async (user, password) => {
         }
     );
     if (!response.ok) {
-        alert("Invalid username or password. Please try again.")
+        throw new Error("Invalid username or password. Please try again.");
     }
     const { accessToken } = await response.json();
     return accessToken;
