@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./loader/loader.css" />
 </head>
 <body>
-    <div id="notifications-container"></div>
+    
+    <div class="notifications-container"></div>
     <form action="">
         <label for="user">User:</label><br>
         <input type="email" id="user" name="user" placeholder="introduce your email"><br><br>
@@ -18,8 +21,11 @@
         <label for="confirmPassword">Confirm password:</label><br>
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm your password" required minlength="6"><br><br>
 
-        <input type="submit" value="Register">
+        <input class="submit" type="submit" value="Register">
     </form>
+    <div class="loader-container hidden">
+        <div class="loader"></div>
+    </div>
     <script type="module" src="./register.js"></script>
 </body>
 </html>
