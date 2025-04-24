@@ -1,4 +1,5 @@
 import { login } from "./loginModel.js";
+import { REGEXP } from "../utils/constants.js";
 
 export async function loginController(form) {
 
@@ -9,7 +10,7 @@ export async function loginController(form) {
 
 
         //validate email format
-        const userRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        const userRegExp = REGEXP.mail;
         if (!userRegExp.test(user)) {
             alert('User format is not valid. Must be an email address.')
         } else {
