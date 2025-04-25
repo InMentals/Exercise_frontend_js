@@ -12,14 +12,24 @@ export function createProductController(form) {
         const type = form.querySelector('input[name="type"]:checked');
         let sell = true;
         if (type.value === "buy") sell = false;
-        
+        handleCreateProduct(name, description, price, image, sell, form);
+    });
+
+
+    const handleCreateProduct = async (name, description, price, image, sell, form) => {
         try {
+            const event = new CustomEvent("creation-started");
+            form.dispatchEvent(event);
             await createProduct(name, description, price, image, sell);
             setTimeout(() => {
               window.location = '/';
             }, 3000);
         } catch (error) {
-            alert(error.message);
+            const event = new CustomEvent("creation-error", {
+                detail: error.message,
+            });
+            form.dispatchEvent(event);
         }
-    });
+    }
+
 }
