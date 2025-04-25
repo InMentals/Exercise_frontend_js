@@ -25,7 +25,8 @@ function drawProducts(products, container){
     container.innerHTML = buildNoProductsAdvice();
   } else {
     products.forEach((product) => {
-      const productContainer = document.createElement("div");
+      const productContainer = document.createElement("a");
+      productContainer.setAttribute("href", `./product-detail.html?id=${product.id}`)
       productContainer.classList.add("product");
       productContainer.innerHTML = buildProduct(product);
       container.appendChild(productContainer);

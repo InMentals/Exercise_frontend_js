@@ -18,5 +18,5 @@ export const buildProduct = (product) => {
 
 
 export const buildNoProductsAdvice = () => {
-  return '<h3>We are sorry, there are no products available!</h3>'
+  return '<h2>We are sorry, there are no products available!</h2>'
 }
