@@ -17,3 +17,9 @@ export const buildProductDetailView = (product) => {
     `;
     return productView
   }
+
+export const buildErrorView = () => {
+  let errorView = `<h2>Error loading product detail</h2>
+  <button onclick="window.location.href='/'">Go back to products list</button>`;
+  return errorView
+}
