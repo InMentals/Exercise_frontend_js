@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Create new product</h1>
-    <form>
+    <div class="notifications-container"></div>
+    <form action="">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" placeholder="Product name" required><br><br>
 
@@ -22,7 +23,7 @@
         <input type="text" id="image" name="image" placeholder="Product image"><br><br>
 
         <fieldset>
-            <legend>Ad type:</legend>
+            <legend>Type:</legend>
 
               <input type="radio" id="sell" name="type" value="sell" checked/>
               <label for="sell">Sell</label>
@@ -34,6 +35,9 @@
 
         <input class="submit" type="submit" value="Create ad">
     </form>
+    <div class="loader-container hidden">
+        <div class="loader"></div>
+    </div>
     <script type="module" src="./createProduct.js"></script>
 </body>
 </html>
