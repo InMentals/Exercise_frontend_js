@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const {show, hide} = loaderController(loaderContainer);
     
 
-    form.addEventListener('registration-started', () => {
+    form.addEventListener("registration-started", () => {
         show();
         submitButton.classList.add("hidden");
     });
@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     registerController(form);
+
+    //TODO: enseñar mensaje con "registration successfull"
 
 });
 

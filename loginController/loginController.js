@@ -17,7 +17,7 @@ export async function loginController(form) {
             });
             form.dispatchEvent(event);
         } else {
-            handleLogin(user, password, form)
+            handleLogin(user, password, form);
         }
 
     });
@@ -26,8 +26,8 @@ export async function loginController(form) {
         try{
             const event = new CustomEvent("login-started");
             form.dispatchEvent(event);
-            const token =await login(user, password);
-            localStorage.setItem("token", token)
+            const token = await login(user, password);
+            localStorage.setItem("token", token);
             setTimeout(() => {
                 window.location = '/'
               }, 3000);
@@ -42,3 +42,5 @@ export async function loginController(form) {
 
 
 }
+
+//TODO: cambiar el nombre a la carpeta loginController (quitarle el controller)

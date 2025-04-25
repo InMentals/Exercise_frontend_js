@@ -44,7 +44,7 @@ export async function registerController(form) {
                   }, 3000);
             }catch(error){
                 const event = new CustomEvent("registration-error", {
-                    detail: error,
+                    detail: error.message,
                 });
                 form.dispatchEvent(event);
             }

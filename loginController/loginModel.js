@@ -1,9 +1,9 @@
 export const login = async (user, password) => {
-    const response = await fetch('http://localhost:8000/auth/login', 
+    const response = await fetch("http://localhost:8000/auth/login", 
         {
-        method: 'POST', 
+        method: "POST", 
         body: JSON.stringify({username: user, password}), 
-        headers: {'Content-Type': 'application/json'}
+        headers: {"Content-Type": "application/json"}
         }
     );
     if (!response.ok) {
