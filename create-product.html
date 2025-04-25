@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Create new product</h1>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Product name" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="10" cols="30" maxlength="300" placeholder="Product description (300ch. max)" required></textarea><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" placeholder="Product price" required><br><br>
+
+        <label for="image">Image:</label><br>
+        <input type="text" id="image" name="image" placeholder="Product image"><br><br>
+
+        <fieldset>
+            <legend>Ad type:</legend>
+
+              <input type="radio" id="sell" name="type" value="sell" checked/>
+              <label for="sell">Sell</label>
+
+              <input type="radio" id="buy" name="type" value="buy"/>
+              <label for="buy">Buy</label>
+
+        </fieldset><br>
+
+        <input class="submit" type="submit" value="Create ad">
+    </form>
+    <script type="module" src="./createProduct.js"></script>
+</body>
+</html>
