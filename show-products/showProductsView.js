@@ -10,7 +10,7 @@ export const buildProduct = (product) => {
     productView += `
       <p>Price: ${product.price}€</p>
       <p>${product.description}</p>
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${product.image}">
     `;
     return productView;
     

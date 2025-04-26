@@ -1,15 +1,25 @@
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  align-items: start;
+}
+
 .product {
-  display: flex; /* o block, según necesites */
+  display: flex;
   flex-direction: column;
   background-color: white;
+  justify-content: top;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   padding: 15px;
   transition: transform 0.2s ease;
   height: 100%;
-  text-decoration: none; /* quita el subrayado */
-  color: inherit; /* mantiene el color de texto natural */
+  text-decoration: none; 
+  color: inherit;
+  box-sizing: border-box;
 }
 
 .product:hover {
@@ -43,4 +53,10 @@
   margin-top: 10px;
   object-fit: cover;
   align-self: center;
+  background-color: #f0f0f0;
+}
+
+.noProducts {
+  display: flex;
+  justify-content: center;
 }
