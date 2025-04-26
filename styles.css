@@ -19,6 +19,7 @@ body {
   margin: 0;
 }
 
+
 .hidden {
   display: none;
 }
@@ -33,6 +34,7 @@ body {
   align-items: center;
   padding: 1rem;
   border-bottom: 4px solid var(--main-brand-color-light);
+  z-index: 100;
 }
 
 .logo {
@@ -50,3 +52,27 @@ body {
 
 
 
+.button {
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--main-brand-color);
+  text-decoration: none;
+  padding: 0.7rem;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid var(--main-brand-color);
+  transition: background-color 0.3s;
+}
+
+
+@media screen and (hover : hover) {
+  .button {
+      cursor: pointer;
+  }
+  .button:hover {
+      background-color: var(--main-brand-color-light);
+  }
+}
