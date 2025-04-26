@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productContainer.addEventListener("detail-view-finished", () => {
     hide();
-    showNotification('Product detail loading finished');
+    showNotification('Loading product detail finished');
   });
 
   productContainer.addEventListener("detail-view-error", (event) => {
