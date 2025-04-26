@@ -29,6 +29,8 @@ export async function loginController(form) {
             const token = await login(user, password);
             localStorage.setItem("token", token);
             setTimeout(() => {
+                const event = new CustomEvent("login-finished");
+                form.dispatchEvent(event);
                 window.location = '/'
               }, 3000);
         }catch(error){
