@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./show-products/showProducts.css" />
     <link rel="stylesheet" href="./loader/loader.css" />
+    <link rel="stylesheet" href="./notifications/notifications.css">
+    <link rel="stylesheet" href="./session/session.css">
 </head>
 <body>
-    <h1>Products</h1>
-    <div class="session"></div>
+    <header class="header">
+        <a class="logo" href="/" >
+            <img src="logo-wallafront.svg" alt="">
+            <h1>WallaFront</h1>
+        </a>
+        <nav>
+            <ul class="session"></ul>
+        </nav>
+    </header>
+    <main>
     <div class="loader-container hidden">
         <div class="loader"></div>
     </div>
-    <div class="notifications-container"></div>
     <div class="products-container"></div>
+    <div class="notifications-container"></div>
+    </main>
     <script type="module" src="./index.js"></script>
 </body>
 </html>

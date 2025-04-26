@@ -1,10 +1,52 @@
-body {
+:root {
+  --bg-color: white;
+  --main-text-color: black;
+  --secondary-text-color: white;
+  --main-brand-color: #ddce2e;
+  --main-brand-color-light: #ddce2e7a;
+  --border-color: grey;
+  --input-bg-color: white;
+  font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@font-face {
+  font-family: SourGummy;
+  src: url(./utils/fonts/SourGummy-VariableFont_wdth,wght.ttf);
+}
+
+body {
   background-color: #f8f9fa;
   margin: 0;
-  padding: 20px;
 }
 
 .hidden {
   display: none;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 4px solid var(--main-brand-color-light);
+}
+
+.logo {
+  color: var(--main-brand-color);
+  text-decoration: none;
+  display: flex;
+  font-family: SourGummy;
+}
+
+.logo img {
+  width: 80px;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
