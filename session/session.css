@@ -1,0 +1,32 @@
+.session {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .session .button {
+      text-decoration: none;
+      color: var(--main-text-color);
+      font-weight: bold;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--main-brand-color);
+      text-decoration: none;
+      padding: 0.7rem;
+      display: inline-block;
+      border-radius: 5px;
+      border: 1px solid var(--main-brand-color);
+      transition: background-color 0.3s;
+  }
+  
+  
+  @media screen and (hover : hover) {
+    .session .button {
+        cursor: pointer;
+    }
+    .session .button:hover {
+        background-color: var(--main-brand-color-light);
+    }
+  }
