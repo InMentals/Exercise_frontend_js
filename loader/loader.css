@@ -1,9 +1,13 @@
   .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;  /* centra horizontalmente */
-    align-items: center;      /* centra verticalmente */
-    width: 100vw;             /* opcional, por si quieres asegurar el ancho */
-    position: fixed;          /* opcional, para que esté encima */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
   }
 
   .loader {
@@ -11,7 +15,7 @@
     padding: 8px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: #25b09b;
+    background: var(--main-brand-color);
     --_m: 
       conic-gradient(#0000 10%,#000),
       linear-gradient(#000 0 0) content-box;
