@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     registerController(form);
 
-    //TODO: enseñar mensaje con "registration successfull"
+    //TODO: "signup succesfull" notification
 
 });
 

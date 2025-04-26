@@ -1,13 +1,30 @@
-import { productDetailModel } from "./productDetailModel.js"
-import { buildProductDetailView, buildErrorView } from "./productDetailView.js"
+import { productDetailModel, getLoggedInUserInfo, deleteProduct } from "./productDetailModel.js"
+import { buildProductDetailView, buildErrorView, buildDeleteProductButton } from "./productDetailView.js"
 
 export const productDetailController = async (container, productId) => {
+
+  const showDeleteProductButton = (productId) => {
+    const deleteButton = buildDeleteProductButton()
+    container.appendChild(deleteButton)
+    deleteButton.addEventListener("click", () => {
+      if (confirm("Do you really want to delete this product?")) {
+        deleteProduct(productId);
+      }
+    });
+  }
 
   try {
     const event = new CustomEvent("detail-view-started");
     container.dispatchEvent(event);
     const productDetail = await productDetailModel(productId);
     container.innerHTML = buildProductDetailView(productDetail);
+
+    if (localStorage.getItem('token')){
+      const user = await getLoggedInUserInfo();
+      if (user.id === productDetail.userId) {
+        showDeleteProductButton(productId)
+      }
+    }
     container.classList.add("product");
   } catch (error) {
     container.innerHTML = buildErrorView();
