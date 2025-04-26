@@ -45,4 +45,3 @@ export async function loginController(form) {
 
 }
 
-//TODO: change loginController folder name (remove controller)

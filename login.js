@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         show();
     });
 
-    form.addEventListener('login-started', () => {
+    form.addEventListener('login-finished', () => {
         showNotification("Login successful.", "success");
     });
 

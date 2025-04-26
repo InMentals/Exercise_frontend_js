@@ -17,16 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.classList.add("hidden");
     });
 
+    form.addEventListener("registration-finished", () => {
+        showNotification("Signup successful.", "success");
+    });
+
     form.addEventListener("registration-error", (event) => {
         hide();
         submitButton.classList.remove("hidden");
         const errorMessage = event.detail;
-        showNotification(errorMessage);
+        showNotification(errorMessage, "error");
     });
 
     registerController(form);
 
-    //TODO: "signup succesfull" notification
-
+   
 });
 

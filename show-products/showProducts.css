@@ -9,11 +9,11 @@
 .product {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--product-bg-color);
   justify-content: top;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px var(--shadows-color);
   padding: 15px;
   transition: transform 0.2s ease;
   height: 100%;
@@ -29,21 +29,20 @@
 .product h2 {
   margin-top: 0;
   font-size: 20px;
-  color: #333;
 }
 
 .product p {
   margin: 8px 0;
-  color: #555;
+  color: var(--product-text-color);
 }
 
 .product p:first-of-type {
   font-weight: bold;
-  color: #28a745; 
+  color: var(--sell-color); 
 }
 
 .product p.buy:first-of-type {
-  color: #dc3545; 
+  color: var(--buy-color); 
 }
 
 .product img {
