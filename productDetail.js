@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productContainer.addEventListener("detail-view-finished", () => {
     hide();
-    showNotification('Loading product detail finished');
+    showNotification("Loading product detail finished", "success");
   });
 
   productContainer.addEventListener("detail-view-error", (event) => {
       hide();
       const errorMessage = event.detail;
-      showNotification(errorMessage);
+      showNotification(errorMessage, "error");
   });
 
 

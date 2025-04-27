@@ -1,0 +1,15 @@
+.removeButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    max-width: 160px;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

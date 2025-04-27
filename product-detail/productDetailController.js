@@ -28,6 +28,7 @@ export const productDetailController = async (container, productId) => {
     container.classList.add("product");
   } catch (error) {
     container.innerHTML = buildErrorView();
+    container.classList.add("error");
     const event = new CustomEvent("detail-view-error", {
       detail: error.message,
     });
