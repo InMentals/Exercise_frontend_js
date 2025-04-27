@@ -1,33 +1,56 @@
 {
-    "products": [
-        {
-            "name": "Volkswagen Golf",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus",
-            "price": 40,
-            "sell": true,
-            "image": "https://encrypted-tbn0.gstatic.com/'image's?q=tbn:ANd9GcRGvs5YLVeWEKWQiTcEKPiShCShCHodsBaZqw&s"
-        },
-        {
-            "name": "JBL speaker",
-            "description": "Lorem ipsum dolor sit amet.",
-            "price": 10,
-            "sell": true,
-            "image": "https://m.media-amazon.com/images/I/71H-CPzgkhL._AC_UF894,1000_QL80_.jpg"
-        },
-        {
-            "name": "Philips shaver",
-            "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibuss",
-            "price": 5,
-            "sell": true,
-            "image": "https://encrypted-tbn0.gstatic.com/'image's?q=tbn:ANd9GcQSgt_yvXmdtTrEgZUj7tH6EjN6xOftqb8XHg&s"
-        },
-        {
-            "name": "HP laptop",
-            "description": "the best one",
-            "price": 600,
-            "sell": false,
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvoTUHiRuJofk61cp2Cmyj_JmCnbe_yQBFw&s"
-        }
-    ],
-    "users": []
+  "products": [
+    {
+      "name": "VW Golf",
+      "description": "In good conditions. 2021. 30.000Km",
+      "price": "20.000",
+      "image": "https://encrypted-tbn0.gstatic.com/'image's?q=tbn:ANd9GcRGvs5YLVeWEKWQiTcEKPiShCShCHodsBaZqw&s",
+      "sell": true,
+      "userId": 1,
+      "updatedAt": "2025-04-27T18:44:06.052Z",
+      "id": 1
+    },
+    {
+      "name": "BL speaker",
+      "description": "To repear. For pieces",
+      "price": "10",
+      "image": "https://m.media-amazon.com/images/I/71H-CPzgkhL._AC_UF894,1000_QL80_.jpg",
+      "sell": true,
+      "userId": 1,
+      "updatedAt": "2025-04-27T18:46:19.635Z",
+      "id": 2
+    },
+    {
+      "name": "Philips shaver",
+      "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibuss",
+      "price": "5",
+      "image": "https://encrypted-tbn0.gstatic.com/'image's?q=tbn:ANd9GcQSgt_yvXmdtTrEgZUj7tH6EjN6xOftqb8XHg&s",
+      "sell": false,
+      "userId": 2,
+      "updatedAt": "2025-04-27T21:18:52.040Z",
+      "id": 3
+    },
+    {
+      "name": "HP laptop",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus",
+      "price": "600",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvoTUHiRuJofk61cp2Cmyj_JmCnbe_yQBFw&s",
+      "sell": false,
+      "userId": 2,
+      "updatedAt": "2025-04-27T21:19:30.492Z",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "username": "user1@email.com",
+      "password": "$2b$10$/f7WtutzvlSX4S5CmXh3keUo0tdvPpFznWTeKOE59gTm/L3YKQE3O",
+      "id": 1
+    },
+    {
+      "username": "user2@email.com",
+      "password": "$2b$10$/f7WtutzvlSX4S5CmXh3kePTLlCI0nXSDpfhR..wymwxAXXBzujZa",
+      "id": 2
+    }
+  ]
 }
