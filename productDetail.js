@@ -31,6 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  productContainer.addEventListener("deletion-started", (event) => {
+    show();
+  });
+
+  productContainer.addEventListener("deletion-finished", () => {
+    showNotification("Product deleted successfuly.", "success");
+  });
+
+  productContainer.addEventListener("deletion-error", (event) => {
+      hide();
+      const errorMessage = event.detail;
+      showNotification(errorMessage, "error");
+  });
+
+
   if (productId) {
     productDetailController(productContainer, productId);
   } else {
@@ -40,5 +55,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-//TODO: after deleting product, show notification & go to index
 //TODO: instead of alert asking "are you sure?" set a <div> like the loader
