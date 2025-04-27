@@ -35,6 +35,6 @@ export async function getLoggedInUserInfo() {
     }
   });
   if (!response.ok) {
-    throw new Error("Product not available");
+    throw new Error("Product not found.");
   }
 }

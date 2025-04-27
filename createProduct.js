@@ -32,8 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
         showNotification(errorMessage, "error");
     });
 
+    session.addEventListener("session-started", (event) => {
+        show();
+    });
 
-    createProductController(form);
+    session.addEventListener("session-finished", (event) => {
+        showNotification(event.detail, "success");
+        hide();
+    });
+
+    session.addEventListener("session-error", (event) => {
+        showNotification(event.detail, "error");
+        hide();
+    });
+    
+
+
     sessionController(session);
+    createProductController(form);
+
 });
 
