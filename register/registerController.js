@@ -36,19 +36,19 @@ export async function registerController(form) {
 
         const handleRegisterUser = async (user, password, form) => {
             try{
-                const event = new CustomEvent("registration-started");
-                form.dispatchEvent(event);
+                const eventStart = new CustomEvent("registration-started");
+                form.dispatchEvent(eventStart);
                 await registerUser(user, password);
+                const eventFinish = new CustomEvent("registration-finished");
+                form.dispatchEvent(eventFinish);
                 setTimeout(() => {
-                    const event = new CustomEvent("registration-finished");
-                    form.dispatchEvent(event);
                     window.location = '/'
                 }, 3000);
             }catch(error){
-                const event = new CustomEvent("registration-error", {
+                const eventError = new CustomEvent("registration-error", {
                     detail: error.message,
                 });
-                form.dispatchEvent(event);
+                form.dispatchEvent(eventError);
             }
         }
 }
