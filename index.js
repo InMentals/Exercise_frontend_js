@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    productsContainer.addEventListener('load-products-started', () => {
+    productsContainer.addEventListener("load-products-started", () => {
         show();
     });
-    productsContainer.addEventListener('load-products-finished', () => {
+    productsContainer.addEventListener("load-products-finished", () => {
         hide();
-        showNotification('loading products finished');
+        showNotification("Loading products finished.", "success");
     });
-    productsContainer.addEventListener('load-products-error', (event) => {
+    productsContainer.addEventListener("load-products-error", (event) => {
         const errorMesage = event.detail;
-        showNotification(errorMesage);
+        showNotification(errorMesage, "error");
     })
     showProductsController(productsContainer);
     sessionController(session)

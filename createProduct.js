@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.classList.add("hidden");
     });
 
+    form.addEventListener("creation-finished", () => {
+        showNotification("Product created successfully.", "success");
+    });
+
     form.addEventListener("creation-error", (event) => {
         hide();
         submitButton.classList.remove("hidden");

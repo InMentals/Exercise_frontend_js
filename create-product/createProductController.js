@@ -22,7 +22,9 @@ export function createProductController(form) {
             form.dispatchEvent(event);
             await createProduct(name, description, price, image, sell);
             setTimeout(() => {
-              window.location = '/';
+                const event = new CustomEvent("creation-finished");
+                form.dispatchEvent(event);
+                window.location = '/';
             }, 3000);
         } catch (error) {
             const event = new CustomEvent("creation-error", {

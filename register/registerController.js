@@ -40,6 +40,8 @@ export async function registerController(form) {
                 form.dispatchEvent(event);
                 await registerUser(user, password);
                 setTimeout(() => {
+                    const event = new CustomEvent("registration-finished");
+                form.dispatchEvent(event);
                     window.location = '/'
                   }, 3000);
             }catch(error){

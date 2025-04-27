@@ -22,6 +22,7 @@ export async function showProductsController(container) {
 function drawProducts(products, container){
   container.innerHTML = ""; 
   if(products.length === 0) {
+    container.classList.add("noProducts");
     container.innerHTML = buildNoProductsAdvice();
   } else {
     products.forEach((product) => {

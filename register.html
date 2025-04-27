@@ -6,26 +6,41 @@
     <title>Registration</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./loader/loader.css" />
+    <link rel="stylesheet" href="./notifications/notifications.css">
+    <link rel="icon" href="./utils/images/logo-wallafront.svg">
 </head>
 <body>
-    
-    <div class="notifications-container"></div>
-    <form action="">
-        <label for="user">User:</label><br>
-        <input type="email" id="user" name="user" placeholder="introduce your email" required><br><br>
+    <header class="header">
+        <a class="logo" href="/" >
+            <img src="./utils/images/logo-wallafront.svg" alt="">
+            <h1>WallaFront</h1>
+        </a>
+        <nav>
+            <ul class="session"></ul>
+        </nav>
+    </header>
+    <main class="main">
+        <form action="">
+            <label for="user">User:</label><br>
+            <input type="email" id="user" name="user" placeholder="introduce your email" required><br><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="introduce your password
-        " required minlength="6"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="introduce your password
+            " required minlength="6"><br><br>
 
-        <label for="confirmPassword">Confirm password:</label><br>
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm your password" required minlength="6"><br><br>
+            <label for="confirmPassword">Confirm password:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm your password" required minlength="6"><br><br>
 
-        <input class="submit" type="submit" value="Register">
-    </form>
-    <div class="loader-container hidden">
-        <div class="loader"></div>
-    </div>
+            <div class="buttons-container">
+                <input class="submit button" type="submit" value="Signup">
+                <a class="button" href="./login.html">Login</a>
+            </div>
+        </form>
+        <div class="loader-container hidden">
+            <div class="loader"></div>
+        </div>
+        <div class="notifications-container"></div>
+    </main>
     <script type="module" src="./register.js"></script>
 </body>
 </html>

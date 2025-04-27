@@ -20,12 +20,16 @@ export const buildProductDetailView = (product) => {
 
 export const buildErrorView = () => {
   let errorView = `<h2>Error loading product detail</h2>
-  <button onclick="window.location.href='/'">Go back to products list</button>`;
+  <button class="button" onclick="window.location.href='/'">Go back to products list</button>`;
   return errorView;
 }
 
 export const buildDeleteProductButton = () => {
+  const removeButtonContainer = document.createElement("div");
+  removeButtonContainer.classList.add("removeButtonContainer");
   const removeButton = document.createElement("button");
   removeButton.textContent = 'Delete product';
-  return removeButton;
+  removeButton.classList.add("button");
+  removeButtonContainer.appendChild(removeButton);
+  return removeButtonContainer;
 }

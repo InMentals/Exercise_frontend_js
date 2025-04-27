@@ -1,14 +1,14 @@
 export const buildUnauthorizedSession = () => {
     return `
-      <a href="./login.html">Login</a>
-      <a href="./register.html">Signup</a>
+      <li><a class="button" href="./login.html">Login</a></li>
+      <li><a class="button" href="./register.html">Signup</a></li>
     `;
   }
   
   export const buildAuthorizedSession = () => {
     return `
-      <a href="./create-product.html">Create Product</a>
-      <button class="logout">Logout</button>
+      <li><a class="button"href="./create-product.html">Create Product</a></li>
+      <li><button class="logout button">Logout</button></li>
     `;
   }
   
