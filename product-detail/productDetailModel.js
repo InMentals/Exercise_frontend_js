@@ -22,7 +22,7 @@ export async function getLoggedInUserInfo() {
 
   const user = await response.json();
   return user;
- }
+}
 
 
  export async function deleteProduct(productId) {
