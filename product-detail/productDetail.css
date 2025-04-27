@@ -1,6 +1,58 @@
+.detail-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.detail-container h2 {
+    margin: 0.1em 0em;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--product-bg-color);
+    justify-content: top;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadows-color);
+    padding: 15px;
+    transition: transform 0.2s ease;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit;
+    box-sizing: border-box;
+    max-width: 500px;
+}
+
+
+
+.detail p {
+    margin:0.25em 0em;
+}
+
+p.sell {
+    font-weight: bold;
+    color: var(--sell-color); 
+}
+  
+p.buy {
+    font-weight: bold;
+    color: var(--buy-color); 
+}
+
+.detail img{
+    max-height:200px;
+    width:auto;
+    border-radius: 10px;
+    margin:auto
+}
+
 .removeButtonContainer {
     display: flex;
     justify-content: center;
+    margin: 1em;
 }
 
 .button {

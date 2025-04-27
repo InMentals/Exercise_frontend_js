@@ -38,11 +38,17 @@ body {
   z-index: 100;
 }
 
+
+
+
 .logo {
   color: var(--main-brand-color);
+  align-items: center;
   text-decoration: none;
   display: flex;
   font-family: SourGummy;
+  height: 60px;
+  margin: 0;
 }
 
 .logo img {
