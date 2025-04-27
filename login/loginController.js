@@ -24,20 +24,20 @@ export async function loginController(form) {
 
     const handleLogin = async (user, password, form) => {
         try{
-            const event = new CustomEvent("login-started");
-            form.dispatchEvent(event);
+            const eventStart = new CustomEvent("login-started");
+            form.dispatchEvent(eventStart);
             const token = await login(user, password);
             localStorage.setItem("token", token);
+            const eventFinish = new CustomEvent("login-finished");
+            form.dispatchEvent(eventFinish);
             setTimeout(() => {
-                const event = new CustomEvent("login-finished");
-                form.dispatchEvent(event);
                 window.location = '/'
               }, 3000);
         }catch(error){
-            const event = new CustomEvent("login-error", {
+            const eventError = new CustomEvent("login-error", {
                 detail: error.message,
             });
-            form.dispatchEvent(event);
+            form.dispatchEvent(eventError);
         }
     }
 
