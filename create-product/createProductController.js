@@ -18,19 +18,19 @@ export function createProductController(form) {
 
     const handleCreateProduct = async (name, description, price, image, sell, form) => {
         try {
-            const event = new CustomEvent("creation-started");
-            form.dispatchEvent(event);
+            const eventStart = new CustomEvent("creation-started");
+            form.dispatchEvent(eventStart);
             await createProduct(name, description, price, image, sell);
+            const eventFinish = new CustomEvent("creation-finished");
+            form.dispatchEvent(eventFinish);
             setTimeout(() => {
-                const event = new CustomEvent("creation-finished");
-                form.dispatchEvent(event);
                 window.location = '/';
             }, 3000);
         } catch (error) {
-            const event = new CustomEvent("creation-error", {
+            const eventError = new CustomEvent("creation-error", {
                 detail: error.message,
             });
-            form.dispatchEvent(event);
+            form.dispatchEvent(eventError);
         }
     }
 

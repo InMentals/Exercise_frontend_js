@@ -33,3 +33,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createProductController(form);
 });
+
