@@ -32,7 +32,7 @@ export const sessionController = async (container) => {
     const logoutButton = container.querySelector('.logout');
     logoutButton.addEventListener("click", () => {
       localStorage.removeItem("token")
-      sessionController(container)
+      window.location = "/";
     });
   } else {
     container.innerHTML = buildUnauthorizedSession()

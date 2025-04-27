@@ -1,6 +1,7 @@
 import { productDetailController } from "./product-detail/productDetailController.js";
 import {notificationsController} from "./notifications/notificationsController.js";
 import { loaderController } from "./loader/loaderController.js";
+import { sessionController } from "./session/sessionController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productContainer = document.querySelector(".detail-container");
   const notificationsContainer = document.querySelector(".notifications-container");
   const loaderContainer = document.querySelector(".loader-container");
+  const session = document.querySelector(".session");
   const {showNotification} = notificationsController(notificationsContainer);
   const {show, hide} = loaderController(loaderContainer);
 
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (productId) {
     productDetailController(productContainer, productId);
+    sessionController(session);
   } else {
     window.location = "/";
   }

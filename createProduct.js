@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const notificationsContainer = document.querySelector(".notifications-container");
     const loaderContainer = document.querySelector(".loader-container");
     const submitButton = document.querySelector(".submit");
-    const session = document.querySelector(".session")
+    const session = document.querySelector(".session");
     const {showNotification} = notificationsController(notificationsContainer);
     const {show, hide} = loaderController(loaderContainer);
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hide();
         submitButton.classList.remove("hidden");
         const errorMessage = event.detail;
-        showNotification(errorMessage);
+        showNotification(errorMessage, "error");
     });
 
 
