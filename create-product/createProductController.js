@@ -1,4 +1,5 @@
 import { createProduct } from "./createProductModel.js";
+import { getLoggedInUserInfo } from "../session/sessionModel.js"
 
 export function createProductController(form) {
     
@@ -18,6 +19,7 @@ export function createProductController(form) {
 
     const handleCreateProduct = async (name, description, price, image, sell, form) => {
         try {
+            const user = await getLoggedInUserInfo();
             const eventStart = new CustomEvent("creation-started");
             form.dispatchEvent(eventStart);
             await createProduct(name, description, price, image, sell);
