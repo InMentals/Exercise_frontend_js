@@ -33,3 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createProductController(form);
 });
+
+//TODO: reduce textarea heigh
