@@ -1,4 +1,5 @@
 export const buildProduct = (product) => {
+    const price = product.price.toLocaleString();
     let productView = `<h2>${product.name}</h2>`;
   
     if (product.sell) {
@@ -8,7 +9,7 @@ export const buildProduct = (product) => {
     }
   
     productView += `
-      <p>Price: ${product.price}€</p>
+      <p>Price: ${price}€</p>
       <p>${product.description}</p>
       <img src="${product.image}">
     `;
