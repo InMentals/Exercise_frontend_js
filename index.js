@@ -43,6 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     showProductsController(productsContainer);
-    sessionController(session)
+    sessionController(session);
 
 })
