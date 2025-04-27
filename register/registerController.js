@@ -1,5 +1,6 @@
 import { registerUser } from "./registerModel.js";
 import { REGEXP } from "../utils/constants.js";
+import { login } from "../login/loginModel.js";
 
 export async function registerController(form) {
 
@@ -41,6 +42,8 @@ export async function registerController(form) {
                 await registerUser(user, password);
                 const eventFinish = new CustomEvent("registration-finished");
                 form.dispatchEvent(eventFinish);
+                const token = await login(user, password);
+                localStorage.setItem("token", token);
                 setTimeout(() => {
                     window.location = '/'
                 }, 3000);

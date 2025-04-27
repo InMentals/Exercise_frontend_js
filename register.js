@@ -29,7 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     registerController(form);
-
-   
 });
 
