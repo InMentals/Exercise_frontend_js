@@ -58,4 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-//TODO: instead of alert asking "are you sure?" set a <div> like the loader
+
