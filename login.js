@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const {show, hide} = loaderController(loaderContainer);
     const {showNotification} = notificationsController(notificationsContainer);
 
-    form.addEventListener('login-started', () => {
+    form.addEventListener("login-started", () => {
         show();
     });
 
-    form.addEventListener('login-finished', () => {
+    form.addEventListener("login-finished", () => {
         showNotification("Login successful.", "success");
     });
 
