@@ -24,8 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
     productsContainer.addEventListener("load-products-error", (event) => {
         const errorMesage = event.detail;
         showNotification(errorMesage, "error");
-    })
+    });
+
+
+    session.addEventListener("session-started", (event) => {
+        show();
+    });
+
+    session.addEventListener("session-finished", (event) => {
+        showNotification(event.detail, "success");
+    });
+
+    session.addEventListener("session-error", (event) => {
+        showNotification(event.detail, "error");
+    });
+    
+
+
+
     showProductsController(productsContainer);
-    sessionController(session)
+    sessionController(session);
 
 })

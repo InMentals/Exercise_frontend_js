@@ -6,7 +6,7 @@
   --border-color: #ddd;
   --shadows-color: rgba(0, 0, 0, 0.05);
   --product-text-color: #555;
-  --buy-color: #dc3545;
+  --buy-color: #3540dc;
   --sell-color: #28a745;
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,6 +57,20 @@ body {
   object-fit: contain;
 }
 
+.userName{
+  color: var(--main-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  text-decoration: none;
+  padding: 0.7rem;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid var(--main-brand-color);
+  margin: auto;
+}
+
 
 .button {
   text-decoration: none;
@@ -70,6 +84,7 @@ body {
   display: inline-block;
   border-radius: 5px;
   border: 1px solid var(--main-brand-color);
+  margin: auto;
   transition: background-color 0.3s;
   box-shadow: 0 4px 8px var(--shadows-color);
 }
