@@ -1,6 +1,6 @@
 export const buildProductDetailView = (product) => {
     const date = new Date(product.updatedAt)
-    let productView = `<h2>${product.name}</h2>`;
+    let productView = `<div class="detail"><h2>${product.name}</h2>`;
   
     if (product.sell) {
       productView += `<p class="sell">Sell</p>`;
@@ -11,9 +11,10 @@ export const buildProductDetailView = (product) => {
     productView += `
       <p>Price: ${product.price}€</p>
       <p>${product.description}</p>
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${product.image}">
       <p>User: ${product.user.username}</p>
       <p>Last update: ${date.toLocaleString()}</p>
+      </div>
     `;
     return productView
   }

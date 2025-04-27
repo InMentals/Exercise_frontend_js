@@ -5,7 +5,7 @@ export const productDetailController = async (container, productId) => {
 
   const showDeleteProductButton = (productId) => {
     const deleteButton = buildDeleteProductButton()
-    container.appendChild(deleteButton)
+    container.children[0].appendChild(deleteButton)
     deleteButton.addEventListener("click", () => {
       if (confirm("Do you really want to delete this product?")) {
         deleteProduct(productId);
@@ -25,7 +25,7 @@ export const productDetailController = async (container, productId) => {
         showDeleteProductButton(productId)
       }
     }
-    container.classList.add("product");
+    
   } catch (error) {
     container.innerHTML = buildErrorView();
     container.classList.add("error");

@@ -36,12 +36,13 @@
   color: var(--product-text-color);
 }
 
-.product p:first-of-type {
+p.sell {
   font-weight: bold;
   color: var(--sell-color); 
 }
 
-.product p.buy:first-of-type {
+p.buy {
+  font-weight: bold;
   color: var(--buy-color); 
 }
 
